@@ -1,16 +1,10 @@
-
 <h1>Ебаный таймер через жопу</h1>
 
-<input type="text" value="0" maxlength="2" #hour width="30px">
-<input type="text" value="0" maxlength="2" #min width="30px">
-<input type="text" value="0" maxlength="2" #sec width="30px">
 <br>
-<br>
-{{ittimer.hour < 10 ? '0' + ittimer.hour : ittimer.hour}}:{{ittimer.min < 10 ? '0' + ittimer.min : ittimer.min}}:{{ittimer.sec < 10 ? '0' + ittimer.sec : ittimer.sec}}
-<br>
-<br>
+<br> {{ittimer.hour < 10 ? '0' + ittimer.hour : ittimer.hour}}:{{ittimer.min < 10 ? '0' + ittimer.min : ittimer.min}}:{{ittimer.sec < 10 ? '0' + ittimer.sec : ittimer.sec}} <br>
+	<br>
 
-<button (click)="start(hour.value, min.value, sec.value)" (click)="startstop = !startstop" *ngIf="!startstop">start</button>
-<button (click)="stop()" (click)="startstop = !startstop" *ngIf="startstop">stop</button>
-<button (click)="wait()" (click)="startstop = !startstop">wait</button>
-<button (click)="reset(hour.value = 0, min.value = 0, sec.value = 0)" (click)="startstop = !startstop">reset</button>
+	<button (click)="start()" [disabled]="startButton">start</button>
+	<button (click)="stop()" [disabled]="stopButton">stop</button>
+	<button (click)="wait()">wait</button>
+	<button (click)="reset()">reset</button>
